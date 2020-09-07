@@ -3,16 +3,26 @@ $hostname = "localhost";
 $username = "root";
 $password = "";
 $connect = mysqli_connect($hostname, $username, $password, "airline");
-$query = "SELECT * FROM aircraft";
-$AirplaneInformation = "";
+$query = "SELECT * FROM destinations";
+$AirportInformation = "";
+$route = "";
 
 $temp = $temp1 = mysqli_query($connect, $query);
 
 
-while($row2 = mysqli_fetch_array($temp1))
+while($tb1 = mysqli_fetch_array($temp1))
 {
-    $AirplaneInformation = $AirplaneInformation."<tr><td>$row2[0]</td><td>$row2[1]</td><td>$row2[2]</td><td>$row2[3]</td></tr>";
+    $AirportInformation = $AirportInformation."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
 }
+$query = "SELECT * FROM routes";
+$temp = $temp1 = mysqli_query($connect, $query);
+
+
+while($tb2 = mysqli_fetch_array($temp1))
+{
+    $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,18 +37,33 @@ while($row2 = mysqli_fetch_array($temp1))
 </head>
 <body>
 <div class="jumbotron text-center">
-    <h1>Browse all of our flights!</h1>
+    <h1>Browse all of our routes!</h1>
 </div>
+<h2>Airports</h2>
 <table style="width:75%" align="center">
     <tr>
-        <th>Aircraft</th>
-        <th>Destination</th>
-        <th>Routes</th>
+        <th>Airport code</th>
+        <th>Airport</th>
+        <th>Region</th>
     </tr>
     <?php
-            echo $AirplaneInformation;  ?>
+            echo $AirportInformation;  ?>
 
 </table>
+
+<h2>Routes</h2>
+<table style="width:75%" align="center">
+    <tr>
+        <th>ID</th>
+        <th>Point A</th>
+        <th>Point B</th>
+        <th>Distance</th>
+    </tr>
+    <?php
+    echo $route;  ?>
+
+</table>
+
 
 </body>
 </html>
