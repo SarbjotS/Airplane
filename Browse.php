@@ -22,6 +22,8 @@ while($tb2 = mysqli_fetch_array($temp1))
 {
     $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
 }
+$temp -> close();
+
 
 ?>
 <!DOCTYPE html>
@@ -52,7 +54,9 @@ while($tb2 = mysqli_fetch_array($temp1))
 </table>
 
 <h2>Routes</h2>
-<table style="width:75%" align="center">
+<h4>Enter ID please</h4>
+<input type="text" id="searchData" onkeyup="SearchFunction()" placeholder="Enter route ID here...">
+<table style="width:75%" align="center" id="RoutesTable">
     <tr>
         <th>ID</th>
         <th>Point A</th>
@@ -61,9 +65,28 @@ while($tb2 = mysqli_fetch_array($temp1))
     </tr>
     <?php
     echo $route;  ?>
-
 </table>
+<script>
+    function SearchFunction() {
+        var input, filter, RouteTable, tr, td, txtValue;
+        input = document.getElementById("searchData");
+        filter = input.value.toUpperCase();
+        RouteTable = document.getElementById("RoutesTable");
+        tr = RouteTable.getElementsByTagName("tr");
 
+        for (let i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>

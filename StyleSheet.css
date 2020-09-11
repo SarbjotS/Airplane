@@ -2,7 +2,19 @@ h3{
     font-family: "Times New Roman";
     font-weight: bold;
     font-size: 36px;
+
+}
+h4{
+    margin-left: 50%;
 }
 h2{
-    text-align: center;
+    margin-left: 50%;
+}
+
+input{
+    margin-left: 50%;
+}
+
+table{
+    border-style: solid;
 }
