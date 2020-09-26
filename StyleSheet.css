@@ -4,17 +4,24 @@ h3{
     font-size: 36px;
 
 }
-h4{
-    margin-left: 50%;
-}
-h2{
-    margin-left: 50%;
-}
 
-input{
-    margin-left: 50%;
+#R4{
+    margin-left: 15%;
+}
+#R1{
+    margin-left: 25%;
+
 }
 
 table{
     border-style: solid;
+    background-color: azure;
+}
+.A{
+    display: flex;
+    justify-content: space-around;
+}
+
+#BrowseImage{
+    background-image: url("pexels-anugrah-lohiya-723240.jpg");
 }
