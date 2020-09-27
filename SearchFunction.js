@@ -1,4 +1,4 @@
-function SearchFunction(a, b) {
+function SearchFunction(a) {
     var input, filter, RouteTable, tr, td, txtValue;
     input = document.getElementById("searchRoute");
     filter = input.value.toUpperCase();
