@@ -14,6 +14,13 @@ while($tb1 = mysqli_fetch_array($temp1))
 {
     $AirportInformation = $AirportInformation."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
 }
+$query1 = "SELECT * FROM routes";
+$temp = $temp1 = mysqli_query($connect, $query1);
+
+while($tb2 = mysqli_fetch_array($temp))
+{
+    $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
+}
 
 ?>
 <!DOCTYPE html>
@@ -25,13 +32,22 @@ while($tb1 = mysqli_fetch_array($temp1))
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="StyleSheet.css">
-    <title>Browse!</title>
+    <title>Book!</title>
 </head>
 <body id="BrowseImage">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Browse.php">Browse</a></li>
+    <li><a href="Book.php">Book</a></li>
+    <li><a href="Cancel.php">Cancel Booking</a></li>
+    <li id="LoginButton"><a href="#">Login</a> </li>
+
+</ul>
+
 <div class="jumbotron text-center">
-    <h1>Browse all of our routes!</h1>
+    <h1>Book!</h1>
 </div>
-<h2>Airports</h2>
+<h2 class="A">Airports</h2>
 <table style="width:75%" align="center">
     <tr>
         <th>Airport code</th>
@@ -41,4 +57,21 @@ while($tb1 = mysqli_fetch_array($temp1))
     <?php
     echo $AirportInformation;  ?>
 
+
 </table>
+<br><br><br>
+<table style="width:75%" align="center">
+<tr>
+    <th>ID</th>
+    <th>Point A</th>
+    <th>Point B</th>
+    <th>Distance</th>
+
+</tr>
+
+    <?php
+    echo $route;
+    ?>
+</table>
+</body>
+</html>

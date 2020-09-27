@@ -3,11 +3,7 @@ $hostname = "localhost";
 $username = "root";
 $password = "";
 $connect = mysqli_connect($hostname, $username, $password, "airline");
-$query = "SELECT * FROM destinations";
-$AirportInformation = "";
 $route = "";
-$x = 0;
-$TestArray = 0;
 
 $query = "SELECT * FROM routes";
 $temp = $temp1 = mysqli_query($connect, $query);
@@ -41,7 +37,7 @@ $temp -> close();
     <li><a href="index.html">Home</a></li>
     <li><a href="Browse.php">Browse</a></li>
     <li><a href="Book.php">Book</a></li>
-    <li><a href="Cancel.php">Cancel</a></li>
+    <li><a href="Cancel.php">Cancel Booking</a></li>
     <li id="LoginButton"><a href="#">Login</a> </li>
 
 </ul>
