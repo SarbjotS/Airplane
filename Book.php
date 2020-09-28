@@ -7,20 +7,21 @@ $query = "SELECT * FROM destinations";
 $AirportInformation = "";
 $route = "";
 
-$temp = $temp1 = mysqli_query($connect, $query);
+$temp =  mysqli_query($connect, $query);
 
 
-while($tb1 = mysqli_fetch_array($temp1))
+while($tb1 = mysqli_fetch_array($temp))
 {
     $AirportInformation = $AirportInformation."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
 }
 $query1 = "SELECT * FROM routes";
-$temp = $temp1 = mysqli_query($connect, $query1);
+$temp1 = mysqli_query($connect, $query1);
 
-while($tb2 = mysqli_fetch_array($temp))
+while($tb2 = mysqli_fetch_array($temp1))
 {
     $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +33,9 @@ while($tb2 = mysqli_fetch_array($temp))
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="StyleSheet.css">
+    <script src="ReturnAvailableFlights.js"></script>
     <title>Book!</title>
+
 </head>
 <body id="BrowseImage">
 <ul>
@@ -73,5 +76,24 @@ while($tb2 = mysqli_fetch_array($temp))
     echo $route;
     ?>
 </table>
+<br><br>
+<div >
+    <select class="Select" id="From">
+        <?php foreach ($temp as $r): ?>
+       <</p> <option  value="<?= $r['code']; ?>"><?= $r['airport'];?></option>
+        <?php endforeach;?>
+    </select>
+    <select class="Select" id="To">
+        <?php foreach ($temp as $r): ?>
+        <option  value="<?= $r['code']; ?>"><?= $r['airport'];?></option>
+        <?php endforeach;?>
+    </select>
+    <button onclick="ReturnAvailableFlights()">Submit</button>
+</div>
+<div class="ShowDetails">
+    <textarea id="ShowDetailsOfFlight" rows="4" cols="50";
+    >
+    </textarea>
+</div>
 </body>
 </html>

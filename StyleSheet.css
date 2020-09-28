@@ -75,3 +75,15 @@ li a, .dropbtn {
 #LoginButton{
     margin-left: 75%;
 }
+
+.Select{
+    position: relative;
+    margin-left: 25%    ;
+}
+
+.ShowDetails{
+    margin-left: 40%;
+    margin-right: 40%;
+
+
+}
