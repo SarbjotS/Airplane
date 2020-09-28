@@ -70,6 +70,7 @@ $temp -> close();
         echo $route;
     ?>
 
+    <!--IF TIME AVAILABLE THEN CHANGE TO TEXT AREA LIKE IN BOOK.PHP -->
 </table>
 <!-- Flight times taken from  https://flighttime-calculator.com/ -->
     <div id="R01" class="dropdown-content">

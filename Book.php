@@ -71,29 +71,28 @@ while($tb2 = mysqli_fetch_array($temp1))
     <th>Distance</th>
 
 </tr>
-
     <?php
     echo $route;
     ?>
 </table>
 <br><br>
-<div >
+
+    <h4 CLASS="Select"style="color: white">Origin</h4>
     <select class="Select" id="From">
         <?php foreach ($temp as $r): ?>
        <</p> <option  value="<?= $r['code']; ?>"><?= $r['airport'];?></option>
         <?php endforeach;?>
     </select>
+    <h4 class="Select" style="color: white">Destination</h4>
+
     <select class="Select" id="To">
         <?php foreach ($temp as $r): ?>
         <option  value="<?= $r['code']; ?>"><?= $r['airport'];?></option>
         <?php endforeach;?>
     </select>
-    <button onclick="ReturnAvailableFlights()">Submit</button>
-</div>
-<div class="ShowDetails">
-    <textarea id="ShowDetailsOfFlight" rows="4" cols="50";
-    >
+    <button style="margin-right: 40%" class="Select" onclick="ReturnAvailableFlights()">Submit</button>
+    <textarea class="Select" id="ShowDetailsOfFlight" rows="4" cols="50";>
     </textarea>
-</div>
+
 </body>
 </html>
