@@ -2,7 +2,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$connect = mysqli_connect($hostname, $username, $password, "airline");
+$connect = mysqli_connect($hostname, $username, $password, "assignment2");
 $query = "SELECT * FROM destinations";
 $AirportInformation = "";
 $route = "";
