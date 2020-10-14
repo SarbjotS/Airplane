@@ -1,8 +1,78 @@
+
 h3{
     font-family: "Times New Roman";
     font-weight: bold;
     font-size: 36px;
+
 }
-h2{
+#CloseButton{
+    margin-left: 40%;
+    font-size: larger;
+}
+#wingding{
+    margin-left: 20%;
+    font-size: x-large;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    opacity: 75%;
+    margin-left: 30%;
+}
+
+#NextPage{
+    font-size: x-large;
+    text-decoration: black;
+    margin-left: 75%;
+    margin-right: 19%;
+    background-color: white;
+}
+
+
+#R4{
+    margin-left: 15%;
+}
+#R1{
+    margin-left: 25%;
+
+}
+
+table{
+    border-style: solid;
+    background-color: azure;
+}
+.A{
+    display: flex;
+    justify-content: space-around;
+}
+
+#BrowseImage{
+    background-image: url("pexels-anugrah-lohiya-723240.jpg");
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
     text-align: center;
+    padding: 14px 16px;
+}
+
+#LoginButton{
+    margin-left: 75%;
 }
