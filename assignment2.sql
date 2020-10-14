@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2020 at 02:54 AM
+-- Generation Time: Oct 14, 2020 at 11:47 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -78,33 +78,33 @@ CREATE TABLE `flights` (
   `craftID` varchar(3) NOT NULL,
   `routeID` varchar(3) NOT NULL,
   `flightID` varchar(3) NOT NULL,
-  `flightTime` time NOT NULL,
   `day` set('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday') NOT NULL,
-  `type` set('ARRIVAL','DEPARTURE') NOT NULL
+  `type` set('ARRIVAL','DEPARTURE') NOT NULL,
+  `flightDate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `flights`
 --
 
-INSERT INTO `flights` (`craftID`, `routeID`, `flightID`, `flightTime`, `day`, `type`) VALUES
-('A01', 'R01', 'F01', '15:00:00', 'Friday', 'DEPARTURE'),
-('A02', 'R02', 'F02', '08:00:00', 'Monday', 'DEPARTURE'),
-('A02', 'R02', 'F03', '16:00:00', 'Monday', 'DEPARTURE'),
-('A02', 'R02', 'F04', '08:00:00', 'Tuesday', 'DEPARTURE'),
-('A02', 'R02', 'F05', '16:00:00', 'Tuesday', 'DEPARTURE'),
-('A02', 'R02', 'F06', '08:00:00', 'Wednesday', 'DEPARTURE'),
-('A02', 'R02', 'F07', '16:00:00', 'Wednesday', 'DEPARTURE'),
-('A02', 'R02', 'F08', '08:00:00', 'Thursday', 'DEPARTURE'),
-('A02', 'R02', 'F09', '16:00:00', 'Thursday', 'DEPARTURE'),
-('A02', 'R02', 'F10', '08:00:00', 'Friday', 'DEPARTURE'),
-('A02', 'R02', 'F11', '16:00:00', 'Friday', 'DEPARTURE'),
-('A02', 'R04', 'F12', '10:00:00', 'Monday', 'DEPARTURE'),
-('A02', 'R04', 'F13', '10:00:00', 'Wednesday', 'DEPARTURE'),
-('A02', 'R04', 'F14', '10:00:00', 'Friday', 'DEPARTURE'),
-('A03', 'R03', 'F15', '11:00:00', 'Tuesday', 'DEPARTURE'),
-('A03', 'R03', 'F16', '11:00:00', 'Friday', 'DEPARTURE'),
-('A03', 'R05', 'F17', '13:00:00', 'Monday', 'DEPARTURE');
+INSERT INTO `flights` (`craftID`, `routeID`, `flightID`, `day`, `type`, `flightDate`) VALUES
+('A01', 'R01', 'F01', 'Friday', 'DEPARTURE', '2020-10-23 15:00:00'),
+('A02', 'R02', 'F02', 'Monday', 'DEPARTURE', '2020-10-19 08:00:00'),
+('A02', 'R02', 'F03', 'Monday', 'DEPARTURE', '2020-10-19 16:00:00'),
+('A02', 'R02', 'F04', 'Tuesday', 'DEPARTURE', '2020-10-20 08:00:00'),
+('A02', 'R02', 'F05', 'Tuesday', 'DEPARTURE', '2020-10-20 16:00:00'),
+('A02', 'R02', 'F06', 'Wednesday', 'DEPARTURE', '2020-10-21 08:00:00'),
+('A02', 'R02', 'F07', 'Wednesday', 'DEPARTURE', '2020-10-21 16:00:00'),
+('A02', 'R02', 'F08', 'Thursday', 'DEPARTURE', '2020-10-22 08:00:00'),
+('A02', 'R02', 'F09', 'Thursday', 'DEPARTURE', '2020-10-21 16:00:00'),
+('A02', 'R02', 'F10', 'Friday', 'DEPARTURE', '2020-10-23 08:00:00'),
+('A02', 'R02', 'F11', 'Friday', 'DEPARTURE', '2020-10-23 16:00:00'),
+('A02', 'R04', 'F12', 'Monday', 'DEPARTURE', '2020-10-19 10:00:00'),
+('A02', 'R04', 'F13', 'Wednesday', 'DEPARTURE', '2020-10-21 10:00:00'),
+('A02', 'R04', 'F14', 'Friday', 'DEPARTURE', '2020-10-23 10:00:00'),
+('A03', 'R03', 'F15', 'Tuesday', 'DEPARTURE', '2020-10-20 11:00:00'),
+('A03', 'R03', 'F16', 'Friday', 'DEPARTURE', '2020-10-23 11:00:00'),
+('A03', 'R05', 'F17', 'Monday', 'DEPARTURE', '2020-10-19 13:00:00');
 
 -- --------------------------------------------------------
 
