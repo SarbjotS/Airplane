@@ -75,7 +75,7 @@ while($tb2 = mysqli_fetch_array($temp1))
     ?>
 </table>
 <br><br>
-
+<div class="Halp">
     <h4 CLASS="Select"style="color: white">Origin</h4>
     <select class="Select" id="From">
         <?php foreach ($temp as $r): ?>
@@ -90,8 +90,9 @@ while($tb2 = mysqli_fetch_array($temp1))
         <?php endforeach;?>
     </select>
     <button style="margin-right: 40%" class="Select" onclick="ReturnAvailableFlights()">Submit</button>
-    <textarea class="Select" id="ShowDetailsOfFlight" rows="4" cols="50";>
-    </textarea>
 
+</div>
+<textarea class="Select" id="ShowDetailsOfFlight" rows="6" cols="50";>
+    </textarea>
 </body>
 </html>
