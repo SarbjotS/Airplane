@@ -54,7 +54,7 @@ $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]</td><td>";
     <li><a href="Browse.php">Browse</a></li>
     <li><a href="Book.php">Book</a></li>
     <li><a href="Cancel.php">Cancel Booking</a></li>
-    <li id="LoginButton"><a href="#">Login</a> </li>
+    <li id="LoginButton"><a href="loginscreen.html">Login</a> </li>
 
 </ul>
 
