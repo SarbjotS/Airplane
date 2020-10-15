@@ -91,6 +91,19 @@ while($tb3 = mysqli_fetch_array($temp1))
 <textarea class="Select" id="ShowBrowseFlightDetails" rows="4" cols="75";>
     </textarea>
 
+<h4>Please Select the Flight you want to book</h4>
+<?php
+        $query = "SELECT * FROM routes";
+        $temp = $temp1 = mysqli_query($connect, $query);
+?>
+<form method="post" action="flights.php">
+    <select name="routeList">
+    <<?php foreach ($temp as $rl): ?>
+        <option value=<?= $rl['routeID'] ?>><?= $rl['point1'], ' -> ', $rl['point2']?></option>
+    <?php endforeach ?>
+    </select>
+    <input type="submit" name="submit" value="Submit">
+</form>
 
 </body>
 </html>
