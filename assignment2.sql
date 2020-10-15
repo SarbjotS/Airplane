@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 12:44 PM
+-- Generation Time: Oct 15, 2020 at 06:10 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -43,6 +43,19 @@ INSERT INTO `aircraft` (`craftID`, `model`, `capacity`, `rangenmi`, `cruisekn`) 
 ('A01', 'SyberJet SJ30i', 6, 622, 233),
 ('A02', 'Cirrus SF50', 4, 1171, 342),
 ('A03', 'HondaJet Elite', 5, 2205, 408);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `bookingID` int(11) NOT NULL,
+  `flightID` varchar(3) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -160,6 +173,14 @@ ALTER TABLE `aircraft`
   ADD PRIMARY KEY (`craftID`);
 
 --
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`bookingID`),
+  ADD KEY `flightID` (`flightID`),
+  ADD KEY `userID` (`userID`);
+
+--
 -- Indexes for table `destinations`
 --
 ALTER TABLE `destinations`
@@ -192,6 +213,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -200,6 +227,13 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`flightID`) REFERENCES `flights` (`flightID`),
+  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
 
 --
 -- Constraints for table `flights`
