@@ -43,7 +43,7 @@ while($tb2 = mysqli_fetch_array($temp1))
     <li><a href="Browse.php">Browse</a></li>
     <li><a href="Book.php">Book</a></li>
     <li><a href="Cancel.php">Cancel Booking</a></li>
-    <li id="LoginButton"><a href="loginscreen.html">Login</a> </li>
+    <li id="LoginButton"><a href="#">Login</a> </li>
 
 </ul>
 <div class="jumbotron text-center">
@@ -75,13 +75,7 @@ while($tb2 = mysqli_fetch_array($temp1))
     ?>
 </table>
 <br><br>
-<div class="Halp">
-    <h4 CLASS="Select"style="color: white">Origin</h4>
-    <select class="Select" id="From">
-        <?php foreach ($temp as $r): ?>
-       <</p> <option  value="<?= $r['code']; ?>"><?= $r['airport'];?></option>
-        <?php endforeach;?>
-    </select>
+
     <h4 class="Select" style="color: white">Destination</h4>
 
     <select class="Select" id="To">
@@ -90,9 +84,8 @@ while($tb2 = mysqli_fetch_array($temp1))
         <?php endforeach;?>
     </select>
     <button style="margin-right: 40%" class="Select" onclick="ReturnAvailableFlights()">Submit</button>
-
-</div>
-<textarea class="Select" id="ShowDetailsOfFlight" rows="6" cols="50";>
+    <textarea class="Select" id="ShowDetailsOfFlight" rows="4" cols="50";>
     </textarea>
+
 </body>
 </html>
