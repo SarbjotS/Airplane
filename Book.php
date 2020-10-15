@@ -13,7 +13,7 @@ $temp = $temp1 = mysqli_query($connect, $query);
 
 while($tb1 = mysqli_fetch_array($temp1))
 {
-$AirportInformation = $AirportInformation."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
+    $AirportInformation = $AirportInformation."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
 }
 $query = "SELECT * FROM routes";
 $temp = $temp1 = mysqli_query($connect, $query);
@@ -21,14 +21,14 @@ $temp = $temp1 = mysqli_query($connect, $query);
 
 while($tb2 = mysqli_fetch_array($temp1))
 {
-$route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
+    $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
 }
 $query ="SELECT * FROM flights";
 $temp = $temp1 = mysqli_query($connect, $query);
 
 while($tb3 = mysqli_fetch_array($temp1))
 {
-$flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]</td><td>";
+    $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]</td><td>";
 }
 ?>
 <!DOCTYPE html>
@@ -91,7 +91,6 @@ $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]</td><td>";
 <textarea class="Select" id="ShowBrowseFlightDetails" rows="4" cols="75";>
     </textarea>
 
-<p id="NextPage"><a href="Browse.php"> Continue </a></p>
 
 </body>
 </html>
