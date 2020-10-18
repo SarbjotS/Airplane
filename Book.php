@@ -23,12 +23,12 @@ while($tb2 = mysqli_fetch_array($temp1))
     $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
 }
 
-$query ="SELECT routeID,flightID,flightDate,flightTime FROM flights";
+$query ="SELECT routeID,flightID,flightDate,flightTime,price FROM flights";
 $temp1 = mysqli_query($connect, $query);
 
 while($tb3 = mysqli_fetch_array($temp1))
 {
-    $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]<td>$tb3[3]</td></td>";
+    $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]<td>$tb3[3]</td><td>$tb3[4]</td></tr>";
     // echo $flights;
 }
 ?>
@@ -99,10 +99,10 @@ while($tb3 = mysqli_fetch_array($temp1))
         <th>Flight ID</th>
         <th>Time</th>
         <th>Date</th>
+        <th>Price</th>
     <?php
     echo $flights;
     ?>
-        <td>1</td>
 </tr>
 </table>
 
@@ -115,10 +115,25 @@ while($tb3 = mysqli_fetch_array($temp1))
 
 
 <!-- <textarea class="Select" style="margin-left:20% " id="ShowAvailableDates" rows="12" cols="25";>
-
 </textarea> -->
 <textarea class="Select"  style="margin-left: 20%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
+<!--<h4>Please Select the Flight you want to book</h4>
+<?php
+        $query = "SELECT * FROM routes";
+        $temp = $temp1 = mysqli_query($connect, $query);
+?>
+<form method="post">
+    <select name="routeList">
+    <<?php foreach ($temp as $rl): ?>
+        <option value=<?= $rl['routeID'] ?>><?= $rl['point1'], ' -> ', $rl['point2']?></option>
+    <?php endforeach ?>
+    </select>
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<textarea class="Select"  style="margin-left: 33%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
+</textarea>-->
 
 
 </body>

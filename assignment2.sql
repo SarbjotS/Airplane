@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2020 at 06:10 AM
+-- Generation Time: Oct 18, 2020 at 12:49 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -53,8 +53,7 @@ INSERT INTO `aircraft` (`craftID`, `model`, `capacity`, `rangenmi`, `cruisekn`) 
 CREATE TABLE `bookings` (
   `bookingID` int(11) NOT NULL,
   `flightID` varchar(3) NOT NULL,
-  `userID` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -93,31 +92,33 @@ CREATE TABLE `flights` (
   `flightID` varchar(3) NOT NULL,
   `day` set('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday') NOT NULL,
   `type` set('ARRIVAL','DEPARTURE') NOT NULL,
-  `flightDate` datetime DEFAULT NULL
+  `flightDate` date NOT NULL,
+  `flightTime` time NOT NULL,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `flights`
 --
 
-INSERT INTO `flights` (`craftID`, `routeID`, `flightID`, `day`, `type`, `flightDate`) VALUES
-('A01', 'R01', 'F01', 'Friday', 'DEPARTURE', '2020-10-23 15:00:00'),
-('A02', 'R02', 'F02', 'Monday', 'DEPARTURE', '2020-10-19 08:00:00'),
-('A02', 'R02', 'F03', 'Monday', 'DEPARTURE', '2020-10-19 16:00:00'),
-('A02', 'R02', 'F04', 'Tuesday', 'DEPARTURE', '2020-10-20 08:00:00'),
-('A02', 'R02', 'F05', 'Tuesday', 'DEPARTURE', '2020-10-20 16:00:00'),
-('A02', 'R02', 'F06', 'Wednesday', 'DEPARTURE', '2020-10-21 08:00:00'),
-('A02', 'R02', 'F07', 'Wednesday', 'DEPARTURE', '2020-10-21 16:00:00'),
-('A02', 'R02', 'F08', 'Thursday', 'DEPARTURE', '2020-10-22 08:00:00'),
-('A02', 'R02', 'F09', 'Thursday', 'DEPARTURE', '2020-10-21 16:00:00'),
-('A02', 'R02', 'F10', 'Friday', 'DEPARTURE', '2020-10-23 08:00:00'),
-('A02', 'R02', 'F11', 'Friday', 'DEPARTURE', '2020-10-23 16:00:00'),
-('A02', 'R04', 'F12', 'Monday', 'DEPARTURE', '2020-10-19 10:00:00'),
-('A02', 'R04', 'F13', 'Wednesday', 'DEPARTURE', '2020-10-21 10:00:00'),
-('A02', 'R04', 'F14', 'Friday', 'DEPARTURE', '2020-10-23 10:00:00'),
-('A03', 'R03', 'F15', 'Tuesday', 'DEPARTURE', '2020-10-20 11:00:00'),
-('A03', 'R03', 'F16', 'Friday', 'DEPARTURE', '2020-10-23 11:00:00'),
-('A03', 'R05', 'F17', 'Monday', 'DEPARTURE', '2020-10-19 13:00:00');
+INSERT INTO `flights` (`craftID`, `routeID`, `flightID`, `day`, `type`, `flightDate`, `flightTime`, `price`) VALUES
+('A01', 'R01', 'F01', 'Friday', 'DEPARTURE', '2020-10-23', '15:00:00', 1122),
+('A02', 'R02', 'F02', 'Monday', 'DEPARTURE', '2020-10-19', '08:00:00', 47),
+('A02', 'R02', 'F03', 'Monday', 'DEPARTURE', '2020-10-19', '16:00:00', 47),
+('A02', 'R02', 'F04', 'Tuesday', 'DEPARTURE', '2020-10-20', '08:00:00', 47),
+('A02', 'R02', 'F05', 'Tuesday', 'DEPARTURE', '2020-10-20', '16:00:00', 47),
+('A02', 'R02', 'F06', 'Wednesday', 'DEPARTURE', '2020-10-21', '08:00:00', 47),
+('A02', 'R02', 'F07', 'Wednesday', 'DEPARTURE', '2020-10-21', '16:00:00', 47),
+('A02', 'R02', 'F08', 'Thursday', 'DEPARTURE', '2020-10-22', '08:00:00', 47),
+('A02', 'R02', 'F09', 'Thursday', 'DEPARTURE', '2020-10-21', '16:00:00', 47),
+('A02', 'R02', 'F10', 'Friday', 'DEPARTURE', '2020-10-23', '08:00:00', 47),
+('A02', 'R02', 'F11', 'Friday', 'DEPARTURE', '2020-10-23', '16:00:00', 47),
+('A02', 'R04', 'F12', 'Monday', 'DEPARTURE', '2020-10-19', '10:00:00', 18),
+('A02', 'R04', 'F13', 'Wednesday', 'DEPARTURE', '2020-10-21', '10:00:00', 18),
+('A02', 'R04', 'F14', 'Friday', 'DEPARTURE', '2020-10-23', '10:00:00', 18),
+('A03', 'R03', 'F15', 'Tuesday', 'DEPARTURE', '2020-10-20', '11:00:00', 132),
+('A03', 'R03', 'F16', 'Friday', 'DEPARTURE', '2020-10-23', '11:00:00', 132),
+('A03', 'R05', 'F17', 'Monday', 'DEPARTURE', '2020-10-19', '13:00:00', 107);
 
 -- --------------------------------------------------------
 
