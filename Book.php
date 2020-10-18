@@ -118,12 +118,12 @@ while($tb3 = mysqli_fetch_array($temp1))
 </textarea> -->
 <textarea class="Select"  style="margin-left: 20%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
-<!--<h4>Please Select the Flight you want to book</h4>
+<h4>Please Select the Flight you want to book</h4>
 <?php
         $query = "SELECT * FROM routes";
         $temp = $temp1 = mysqli_query($connect, $query);
 ?>
-<form method="post">
+<form method="post" action="flights.php">
     <select name="routeList">
     <<?php foreach ($temp as $rl): ?>
         <option value=<?= $rl['routeID'] ?>><?= $rl['point1'], ' -> ', $rl['point2']?></option>
@@ -133,7 +133,7 @@ while($tb3 = mysqli_fetch_array($temp1))
 </form>
 
 <textarea class="Select"  style="margin-left: 33%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
-</textarea>-->
+</textarea>
 
 
 </body>
