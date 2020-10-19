@@ -7,11 +7,11 @@
 	<?php
 	if(session_status() != "PHP_SESSION_ACTIVE")
 	{
-		echo "Please log in <a href="loginscreen.html">here</a> to register your booking";
+		echo "Please log in <a href='loginscreen.html'>here</a> to register your booking";
 	}
 	else
 	{
-		<?php
+		
 			$hostname = "localhost";
 			$username = "root";
 			$password = "";
@@ -20,13 +20,12 @@
 			{
 				die("Connection failed: " . $connect->connect_error);
 			}
-			$flightID = $_POST();
-			$user = $_SESSION();
+			$flightID = $_POST["routeList"];
+			$user = $_SESSION["userID"];
 			$query = "INSERT INTO bookings(flightID,userID) VALUES ('$flightID', '$user')";
 			$connect->query($query);
 			$connect->close();
-			echo "Booking successfully made, please click <a href="index.html">here</a> to return to the main page"
-		?>
+			echo "Booking successfully made, please click <a href='index.html'>here</a> to return to the main page";
 	}
 	?>	
 </body>

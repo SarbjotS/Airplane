@@ -23,7 +23,7 @@
 			$row = $result->fetch_assoc();
 			if($row["password"] == $password)
 			{
-				$_SESSION['user_id'] = $username;
+				$_SESSION["user_id"] = $username;
 				echo "Login success, click <a href='index.html'>here</a> to return to the main page";
 			}
 			else

@@ -126,7 +126,8 @@ while($tb3 = mysqli_fetch_array($temp1))
 <form method="post" action="flights.php">
     <select name="routeList">
     <<?php foreach ($temp as $rl): ?>
-        <option value=<?= $rl['flightID'] ?>><?= $rl['flightID'], ' -> ', $rl['routeID']?></option>
+        <?=$flightID = $rl['flightID'];?>
+        <option value=<?= $flightID?>><?= $rl['flightID'], ' -> ', $rl['routeID']?></option>
     <?php endforeach ?>
     </select>
     <input type="submit" name="submit" value="Submit">
@@ -134,7 +135,6 @@ while($tb3 = mysqli_fetch_array($temp1))
 
 <textarea class="Select"  style="margin-left: 33%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
-
 
 </body>
 </html>
