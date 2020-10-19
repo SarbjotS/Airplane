@@ -18,12 +18,12 @@
 			{
 				die("Connection failed: " . $sqlconn->connect_error);
 			}
-			$sql = "SELECT password FROM users WHERE username = '$username'";
+			$sql = "SELECT password,userID FROM users WHERE username = '$username'";
 			$result = $sqlconn->query($sql);
 			$row = $result->fetch_assoc();
 			if($row["password"] == $password)
 			{
-				$_SESSION["user_id"] = $username;
+				$_SESSION["user_id"] = $row["userID"];
 				echo "Login success, click <a href='index.html'>here</a> to return to the main page";
 			}
 			else
@@ -32,7 +32,6 @@
 			}
 			$sqlconn->close();
 		}
-        session_start();
 
     ?>
 </body>
