@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 
@@ -34,5 +34,18 @@
 
 </ul>
 
-<h2 class="A"><strong>Cancel a booking</strong></h2> <!--Can't use div tags, mess up css-->
+<h2 class="A"><strong>Cancel a booking</strong></h2>
+<table style="width:75%" align="center">
+    <tr>
+        <th>Flight</th>
+        <th>Date</th>
+        <th>Price</th>
 
+    </tr>
+    <?php
+    //echo ;
+    ?>
+
+</table>
+</body>
+</html>
