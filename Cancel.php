@@ -48,9 +48,8 @@ while($tb1 = mysqli_fetch_array($temp1))
 <h2 class="A"><strong>Cancel a booking</strong></h2>
 <table style="width:75%" align="center">
     <tr>
-        <th>Flight</th>
-        <th>Date</th>
-        <th>Price</th>
+        <th>Booking ID</th>
+        <th>Flight ID</th>
 
     </tr>
     <?php
