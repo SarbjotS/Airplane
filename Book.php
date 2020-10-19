@@ -101,35 +101,32 @@ session_start();
     ?>
 </tr>
 </table>
+<h4 style="color: snow; margin-left: 40%">Please Select the Flight you want to book</h4>
+<?php
+$query = "SELECT * FROM flights";
+$temp = $temp1 = mysqli_query($connect, $query);
+?>
+<form method="post" action="flights.php" style="margin-left: 45%"">
+    <select name="routeList">
+        <<?php foreach ($temp as $rl): ?>
+            <?=$flightID = $rl['flightID'];?>
+            <option value=<?= $flightID?>><?= $rl['flightID'], ' -> ', $rl['routeID']?></option>
+        <?php endforeach ?>
+    </select>
+    <input type="submit" name="submit" value="Submit">
+</form>
 
-<div style="margin-left:60%" >
-<h4  style="color: white; "><strong>Please enter FlightID</strong></h4>
-<button>Confirm</button>
-    <input type="text">
+<div style="margin-left:35%" >
+
     <textarea class="Select"  style="margin-left: 0%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
-
+</div>
 
 
 <!-- <textarea class="Select" style="margin-left:20% " id="ShowAvailableDates" rows="12" cols="25";>
 </textarea> -->
 
-<h4 style="color: white">Please Select the Flight you want to book</h4>
-<?php
-        $query = "SELECT * FROM flights";
-        $temp = $temp1 = mysqli_query($connect, $query);
-?>
-<form method="post" action="flights.php">
-    <select name="routeList">
-    <<?php foreach ($temp as $rl): ?>
-        <?=$flightID = $rl['flightID'];?>
-        <option value=<?= $flightID?>><?= $rl['flightID'], ' -> ', $rl['routeID']?></option>
-    <?php endforeach ?>
-    </select>
-    <input type="submit" name="submit" value="Submit">
-</form>
-</div>
-</textarea>
+
 
 </body>
 </html>
