@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Flights Page</title>
+    <meta http-equiv="refresh" content="2;url=index.html" />
+
+    <title>Flights Page</title>
 </head>
 <body>
 	<?php
@@ -27,6 +29,7 @@
 	{
 		echo "Please log in <a href='loginscreen.html'>here</a> to register your booking";	
 	}
-	?>	
+	?>
+<p>You will be redirected to the index page in 3 seconds...</p>
 </body>
 </html>

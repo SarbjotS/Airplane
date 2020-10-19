@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration Result</title>
+    <meta http-equiv="refresh" content="2;url=index.html" />
+    <title>Registration Result</title>
 </head>
 <body>
 	<?php 
@@ -39,5 +40,7 @@
         session_start();
 
     ?>
+    <p>You will be redirected to the index page in 3 seconds...</p>
+
 </body>
 </html>

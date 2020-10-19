@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Screen</title>
+    <meta http-equiv="refresh" content="2;url=index.html" />
+    <title>Login Screen</title>
 </head>
 <body>
 	<?php 
@@ -34,4 +35,6 @@
 		}
 
     ?>
+    <p>You will be redirected to the index page in 3 seconds...</p>
+
 </body>
