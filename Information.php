@@ -1,4 +1,5 @@
 <?php
+
 $hostname = "localhost";
 $username = "root";
 $password = "";
@@ -19,3 +20,4 @@ while($row2 = mysqli_fetch_array($result2))
 {
     $AirplaneInformation = $AirplaneInformation."<tr><td>$row2[0]</td><td>$row2[1]</td><td>$row2[2]</td><td>$row2[3]</td></tr>";
 }
+session_start();

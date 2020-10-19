@@ -22,7 +22,7 @@ while($tb2 = mysqli_fetch_array($temp1))
     $route = $route."<tr><td>$tb2[0]</td><td>$tb2[1]</td><td>$tb2[2]</td><td>$tb2[3]</td></tr>";
 }
 
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +46,7 @@ while($tb2 = mysqli_fetch_array($temp1))
     <li id="LoginButton"><a href="loginscreen.html">Login</a> </li>
 
 </ul>
-<div class="jumbotron text-center">
-    <h1>Browse!</h1>
-</div>
+
 <h2 class="A">Airports</h2>
 <table style="width:75%" align="center">
     <tr>

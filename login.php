@@ -32,5 +32,7 @@
 			}
 			$sqlconn->close();
 		}
-	 ?>
+        session_start();
+
+    ?>
 </body>

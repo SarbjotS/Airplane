@@ -36,6 +36,8 @@
 		{
 			echo "Not all forms filled, please go back to the <a href='register.html'>registration screen</a> and try again.";
 		}
-	 ?>
+        session_start();
+
+    ?>
 </body>
 </html>

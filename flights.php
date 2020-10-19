@@ -28,6 +28,7 @@
 			$connect->close();
 			echo "Booking successfully made, please click <a href='index.html'>here</a> to return to the main page";
 	}
+    session_start();
 	?>	
 </body>
 </html>

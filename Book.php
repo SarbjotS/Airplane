@@ -31,6 +31,7 @@ while($tb3 = mysqli_fetch_array($temp1))
     $flights = $flights."<tr><td>$tb3[0]</td><td>$tb3[1]</td><td>$tb3[2]<td>$tb3[3]</td><td>$tb3[4]</td></tr>";
     // echo $flights;
 }
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,10 +63,6 @@ while($tb3 = mysqli_fetch_array($temp1))
     <li id="LoginButton"><a href="loginscreen.html">Login</a> </li>
 
 </ul>
-
-<div class="jumbotron text-center">
-    <h1>Book a flight!</h1>
-</div>
 
 <h2 class="A"><strong>Routes</strong></h2> <!--Can't use div tags, mess up css-->
 <h4 class="A"><strong>Enter where you'd like to go please</strong></h4>
@@ -106,19 +103,19 @@ while($tb3 = mysqli_fetch_array($temp1))
 </tr>
 </table>
 
-<div style="margin-left:20%" >
+<div style="margin-left:60%" >
 <h4  style="color: white; "><strong>Please enter FlightID</strong></h4>
 <button>Confirm</button>
     <input type="text">
+    <textarea class="Select"  style="margin-left: 0%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
+</textarea>
 
-</div>
 
 
 <!-- <textarea class="Select" style="margin-left:20% " id="ShowAvailableDates" rows="12" cols="25";>
 </textarea> -->
-<textarea class="Select"  style="margin-left: 20%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
-</textarea>
-<h4>Please Select the Flight you want to book</h4>
+
+<h4 style="color: white">Please Select the Flight you want to book</h4>
 <?php
         $query = "SELECT * FROM flights";
         $temp = $temp1 = mysqli_query($connect, $query);
@@ -132,8 +129,8 @@ while($tb3 = mysqli_fetch_array($temp1))
     </select>
     <input type="submit" name="submit" value="Submit">
 </form>
-
-<textarea class="Select"  style="margin-left: 33%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
+</div>
+<textarea class="Select"  style="margin-left: 60%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
 
 </body>
