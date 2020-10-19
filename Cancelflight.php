@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cancel Flight</title>
+    <meta http-equiv="refresh" content="2;url=index.html" />
+
+    <title>Cancel Flight</title>
 </head>
 <body>
 	<?php
@@ -26,6 +28,8 @@
 	{
 		echo "Please log in <a href='loginscreen.html'>here</a> to cancel your booking";	
 	}
-	?>	
+	?>
+    <p>You will be redirected to the index page in 3 seconds...</p>
+
 </body>
 </html>

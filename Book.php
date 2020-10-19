@@ -101,7 +101,7 @@ session_start();
     ?>
 </tr>
 </table>
-<h4 style="color: snow; margin-left: 40%">Please Select the Flight you want to book</h4>
+<h4  style="color: black;background-color: white; margin-left: 40%; margin-right: 39%"><strong>Please Select the Flight you want to book</strong></h4>
 <?php
 $query = "SELECT * FROM flights";
 $temp = $temp1 = mysqli_query($connect, $query);
@@ -116,7 +116,7 @@ $temp = $temp1 = mysqli_query($connect, $query);
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<div style="margin-left:35%" >
+<div style="margin-left:37%" >
 
     <textarea class="Select"  style="margin-left: 0%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
