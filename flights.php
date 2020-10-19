@@ -5,6 +5,7 @@
 </head>
 <body>
 	<?php
+	session_start();
 	if(session_status() != "PHP_SESSION_ACTIVE")
 	{
 		echo "Please log in <a href='loginscreen.html'>here</a> to register your booking";
@@ -21,7 +22,7 @@
 				die("Connection failed: " . $connect->connect_error);
 			}
 			$flightID = $_POST["routeList"];
-			$user = $_SESSION["userID"];
+			$user = $_SESSION["user_id"];
 			$query = "INSERT INTO bookings(flightID,userID) VALUES ('$flightID', '$user')";
 			$connect->query($query);
 			$connect->close();
