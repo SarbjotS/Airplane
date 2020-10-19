@@ -63,10 +63,10 @@ $query = "SELECT * FROM bookings";
 $temp = $temp1 = mysqli_query($connect, $query);
 ?>
 <form method="post" action="Cancelflight.php" style="margin-left: 45%">
-    <select name="routeList">
+    <select name="cancelBooking">
         <<?php foreach ($temp as $rl): ?>
-            <?=$flightID = $rl['bookingID'];?>
-            <option value=<?= $flightID?>><?= $rl['bookingID']?></option>
+            <?=$bookingID = $rl['bookingID'];?>
+            <option value=<?= $bookingID?>><?= $rl['bookingID']?></option>
         <?php endforeach ?>
     </select>
     <input type="submit" name="submit" value="Submit">
