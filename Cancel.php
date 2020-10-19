@@ -4,13 +4,13 @@ $hostname = "localhost";
 $username = "root";
 $password = "";
 $connect = mysqli_connect($hostname, $username, $password, "assignment2");
-$query = "SELECT * FROM bookings";
+$query = "SELECT bookingID,flightID FROM bookings";
 $UserBookings = "";
 
 $temp = $temp1 = mysqli_query($connect, $query);
 while($tb1 = mysqli_fetch_array($temp1))
 {
-    $UserBookings = $UserBookings."<tr><td>$tb1[0]</td><td>$tb1[1]</td><td>$tb1[2]</td></tr>";
+    $UserBookings = $UserBookings."<tr><td>$tb1[0]</td><td>$tb1[1]</td></td></tr>";
 }
 ?>
 
