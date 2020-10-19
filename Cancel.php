@@ -58,5 +58,19 @@ while($tb1 = mysqli_fetch_array($temp1))
     ?>
 
 </table>
+<h4  style="margin-left: 40%">Please Select the Flight you want to cancel</h4>
+<?php
+$query = "SELECT * FROM bookings";
+$temp = $temp1 = mysqli_query($connect, $query);
+?>
+<form method="post" action="Cancelflight.php" style="margin-left: 45%">
+    <select name="routeList">
+        <<?php foreach ($temp as $rl): ?>
+            <?=$flightID = $rl['bookingID'];?>
+            <option value=<?= $flightID?>><?= $rl['bookingID']?></option>
+        <?php endforeach ?>
+    </select>
+    <input type="submit" name="submit" value="Submit">
+</form>
 </body>
 </html>
