@@ -120,13 +120,13 @@ while($tb3 = mysqli_fetch_array($temp1))
 </textarea>
 <h4>Please Select the Flight you want to book</h4>
 <?php
-        $query = "SELECT * FROM routes";
+        $query = "SELECT * FROM flights";
         $temp = $temp1 = mysqli_query($connect, $query);
 ?>
 <form method="post" action="flights.php">
     <select name="routeList">
     <<?php foreach ($temp as $rl): ?>
-        <option value=<?= $rl['routeID'] ?>><?= $rl['point1'], ' -> ', $rl['point2']?></option>
+        <option value=<?= $rl['flightID'] ?>><?= $rl['flightID'], ' -> ', $rl['routeID']?></option>
     <?php endforeach ?>
     </select>
     <input type="submit" name="submit" value="Submit">

@@ -11,7 +11,22 @@
 	}
 	else
 	{
-		
+		<?php
+			$hostname = "localhost";
+			$username = "root";
+			$password = "";
+			$connect = mysqli_connect($hostname, $username, $password, "assignment2");
+			if($connect->connect_error)
+			{
+				die("Connection failed: " . $connect->connect_error);
+			}
+			$flightID = $_POST();
+			$user = $_SESSION();
+			$query = "INSERT INTO bookings(flightID,userID) VALUES ('$flightID', '$user')";
+			$connect->query($query);
+			$connect->close();
+			echo "Booking successfully made, please click <a href="index.html">here</a> to return to the main page"
+		?>
 	}
 	?>	
 </body>
