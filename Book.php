@@ -43,7 +43,6 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="StyleSheet.css">
     <script src="SearchFunction.js" ></script>
-    <script src="BrowseInformation.js" ></script>
     <script src="ShowFlightOnBrowse.js" ></script>
     <script src="ReturnAvailableFlights.js"></script>
     <script src="SearchRoutes.js"></script>
@@ -130,7 +129,6 @@ session_start();
     <input type="submit" name="submit" value="Submit">
 </form>
 </div>
-<textarea class="Select"  style="margin-left: 60%;" id="ShowBrowseFlightDetails" rows="3" cols="60";>
 </textarea>
 
 </body>
